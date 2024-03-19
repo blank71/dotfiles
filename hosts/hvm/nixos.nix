@@ -22,12 +22,6 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
-#  boot = {
-#    loader = {
-#      systemd-boot.enable = true;
-#      efi.canTouchEfiVariables = true;
-#    };
-#  };
 
   # Enable networking
   networking.hostName = "${hostname}";
@@ -53,8 +47,8 @@
   services.upower.enable = true;
 
   # fingerprint
-  services.fprintd.enable = true;
-  services.fwupd.enable = true;
+  # services.fprintd.enable = true;
+  # services.fwupd.enable = true;
 
   # scaleing
   environment.variables = {
@@ -89,7 +83,7 @@
   # xrdp
   services.xrdp = {
     enable = true;
-    defaultWindowManager = "${pkgs.gnome3.gnome-session}/bin/gnome-session";
+    defaultWindowManager = "gnome-remote-desktop";
     # port = 13389;
     openFirewall = true;
   };

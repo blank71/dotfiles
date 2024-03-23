@@ -5,31 +5,29 @@
   username,
   ...
 }: {
-  imports =
-    [
-      ./hardware-configuration.nix
+  imports = [
+    ./hardware-configuration.nix
 
-      ../../modules/fonts.nix
-      ../../modules/gnome-desktop.nix
-      ../../modules/i18n-en.nix
-      # ../../modules/vmware.nix
-      ../../modules/xremap.nix
-      ../../modules/tailscale-server.nix
+    ../../modules/fonts.nix
+    ../../modules/gnome-desktop.nix
+    ../../modules/i18n-en.nix
+    # ../../modules/vmware.nix
+    ../../modules/xremap.nix
+    ../../modules/tailscale-server.nix
 
-      ../../users/terminal/wezterm.nix
+    ../../users/terminal/wezterm.nix
 
-
-      # ../../modules/flatpak.nix
-      # ../../modules/fcitx5.nix
-      # ../../modules/gaming.nix
-      # ../../modules/networking.nix
-      # ../../modules/nix.nix
-      # ../../modules/sound.nix
-      # ../../modules/system-tools.nix
-      # ../../modules/virtualisation.nix
-      # ../../modules/xremap.nix
-      # ../../modules/xserver.nix
-    ];
+    # ../../modules/flatpak.nix
+    # ../../modules/fcitx5.nix
+    # ../../modules/gaming.nix
+    # ../../modules/networking.nix
+    # ../../modules/nix.nix
+    # ../../modules/sound.nix
+    # ../../modules/system-tools.nix
+    # ../../modules/virtualisation.nix
+    # ../../modules/xremap.nix
+    # ../../modules/xserver.nix
+  ];
 
   boot = {
     loader = {
@@ -41,14 +39,14 @@
   # Enable networking
   networking.hostName = "${hostname}";
   networking.networkmanager.enable = true;
-  
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
   # nix
   nix = {
     settings = {
-       experimental-features = ["nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes"];
     };
   };
 
@@ -61,10 +59,6 @@
   # Power management
   services.upower.enable = true;
 
-  # fingerprint
-  services.fprintd.enable = true;
-  services.fwupd.enable = true;
-
   # scaleing
   environment.variables = {
     GDK_SCALE = "1";
@@ -73,7 +67,7 @@
     QT_QPA_PLATFORM = "wayland;xcb";
     QT_AUTO_SCREEN_SCALE_FACTOR = "0";
     QT_SCALE_FACTOR = "1";
-    XMODIFIERS="@im=fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
 
   # xserver
@@ -106,11 +100,11 @@
 
   networking.firewall = {
     enable = true;
-    allowedUDPPorts = [ 3389 ];
-    allowedTCPPorts = [ 3389 ];
+    allowedUDPPorts = [3389];
+    allowedTCPPorts = [3389];
   };
 
-  services.gnome.gnome-remote-desktop.enable  = true;
+  services.gnome.gnome-remote-desktop.enable = true;
 
   # Configure console keymap
   #console.keyMap = "jp106";
@@ -151,7 +145,6 @@
 
   environment.systemPackages = with pkgs; [
     cloudflared
-    fprintd
     git
     gnome3.gnome-session
     # remmina
@@ -173,6 +166,6 @@
   # Don't touch this
   system.stateVersion = "23.05";
 
-  system.autoUpgrade.enable  = true;
-  system.autoUpgrade.allowReboot  = false;
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
 }

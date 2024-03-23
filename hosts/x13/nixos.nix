@@ -11,6 +11,7 @@
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix
+    ../../modules/tailscale-server.nix
     ../../modules/podman.nix
     #../../modules/vmware.nix
     ../../modules/xremap.nix

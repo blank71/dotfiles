@@ -1,35 +1,33 @@
 {
-  inputs,
+  #inputs,
   pkgs,
   hostname,
   username,
   ...
 }: {
-  imports =
-    [
-      ./hardware-configuration.nix
+  imports = [
+    ./hardware-configuration.nix
 
-      ../../modules/fonts.nix
-      ../../modules/gnome-desktop.nix
-      ../../modules/i18n-en.nix
-      ../../modules/podman.nix
-      ../../modules/vmware.nix
-      ../../modules/xremap.nix
+    ../../modules/fonts.nix
+    ../../modules/gnome-desktop.nix
+    ../../modules/i18n-en.nix
+    ../../modules/podman.nix
+    ../../modules/vmware.nix
+    ../../modules/xremap.nix
 
-      ../../users/terminal/wezterm.nix
+    ../../users/terminal/wezterm.nix
 
-
-      # ../../modules/flatpak.nix
-      # ../../modules/fcitx5.nix
-      # ../../modules/gaming.nix
-      # ../../modules/networking.nix
-      # ../../modules/nix.nix
-      # ../../modules/sound.nix
-      # ../../modules/system-tools.nix
-      # ../../modules/virtualisation.nix
-      # ../../modules/xremap.nix
-      # ../../modules/xserver.nix
-    ];
+    # ../../modules/flatpak.nix
+    # ../../modules/fcitx5.nix
+    # ../../modules/gaming.nix
+    # ../../modules/networking.nix
+    # ../../modules/nix.nix
+    # ../../modules/sound.nix
+    # ../../modules/system-tools.nix
+    # ../../modules/virtualisation.nix
+    # ../../modules/xremap.nix
+    # ../../modules/xserver.nix
+  ];
 
   boot = {
     loader = {
@@ -41,14 +39,14 @@
   # Enable networking
   networking.hostName = "${hostname}";
   networking.networkmanager.enable = true;
-  
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
   # nix
   nix = {
     settings = {
-       experimental-features = ["nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes"];
     };
   };
 
@@ -62,8 +60,8 @@
   services.upower.enable = true;
 
   # fingerprint
-  services.fprintd.enable = true;
-  services.fwupd.enable = true;
+  #services.fprintd.enable = true;
+  #services.fwupd.enable = true;
 
   # scaleing
   environment.variables = {
@@ -73,7 +71,7 @@
     QT_QPA_PLATFORM = "wayland;xcb";
     QT_AUTO_SCREEN_SCALE_FACTOR = "0";
     QT_SCALE_FACTOR = "1";
-    XMODIFIERS="@im=fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
 
   # xserver
@@ -168,6 +166,6 @@
   # Don't touch this
   system.stateVersion = "23.05";
 
-  system.autoUpgrade.enable  = true;
-  system.autoUpgrade.allowReboot  = false;
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
 }

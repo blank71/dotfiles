@@ -1,5 +1,5 @@
 {
-  #inputs,
+  inputs,
   pkgs,
   hostname,
   username,
@@ -12,7 +12,7 @@
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix
     ../../modules/podman.nix
-    ../../modules/vmware.nix
+    #../../modules/vmware.nix
     ../../modules/xremap.nix
 
     ../../users/terminal/wezterm.nix
@@ -111,7 +111,7 @@
   console.keyMap = "us";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  #services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -145,9 +145,8 @@
 
   environment.systemPackages = with pkgs; [
     cloudflared
-    fprintd
+    #fprintd
     git
-    # remmina
     trash-cli
     vscode
     wget

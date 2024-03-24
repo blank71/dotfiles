@@ -61,7 +61,7 @@
   services.upower.enable = true;
 
   # fingerprint
-  services.fprintd.enable = true;
+  #services.fprintd.enable = true;
   
   # fwupd
   services.fwupd.enable = true;
@@ -148,7 +148,7 @@
 
   environment.systemPackages = with pkgs; [
     cloudflared
-    fprintd
+    #fprintd
     git
     trash-cli
     vscode

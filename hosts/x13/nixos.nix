@@ -61,8 +61,10 @@
   services.upower.enable = true;
 
   # fingerprint
-  #services.fprintd.enable = true;
-  #services.fwupd.enable = true;
+  services.fprintd.enable = true;
+  
+  # fwupd
+  services.fwupd.enable = true;
 
   # scaleing
   environment.variables = {
@@ -112,7 +114,7 @@
   console.keyMap = "us";
 
   # Enable CUPS to print documents.
-  #services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -146,7 +148,7 @@
 
   environment.systemPackages = with pkgs; [
     cloudflared
-    #fprintd
+    fprintd
     git
     trash-cli
     vscode

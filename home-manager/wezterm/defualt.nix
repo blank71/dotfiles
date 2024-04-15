@@ -1,8 +1,13 @@
 {
   pkgs,
+  username,
   ...
 }: {
-  home.packages = with pkgs; [
+  home.file = {
+    source = ./.;
+    recursive = true;
+  }
+  users.users."${username}".packages = with pkgs; [
     wezterm
   ];
 }

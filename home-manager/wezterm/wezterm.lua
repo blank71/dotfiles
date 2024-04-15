@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
--- local wayland_gnome = require("wayland_gnome")
+local wayland_gnome = require("wayland_gnome")
 
 local config = {}
 
@@ -16,5 +16,7 @@ config.initial_rows = 20
 
 config.font =
         wezterm.font("UDEV Gothic NFLG")
+
+wayland_gnome.apply_to_config(config)
 
 return config

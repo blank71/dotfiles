@@ -72,10 +72,10 @@
 
   # xserver
   # Enable the X11 windowing system.
+  services.displayManager.defaultSession = "gnome";
   services.xserver = {
     enable = true;
     displayManager = {
-      defaultSession = "gnome";
       gdm.enable = true;
       gdm.wayland = true;
     };

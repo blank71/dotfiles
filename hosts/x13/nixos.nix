@@ -80,7 +80,7 @@
 
   # xserver
   # Enable the X11 windowing system.
-  # services.displayManager.defaultSession = "gnome";
+  services.displayManager.defaultSession = "gnome";
   services.xserver = {
     enable = true;
     xkb = {

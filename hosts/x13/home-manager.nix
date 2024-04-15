@@ -4,6 +4,7 @@
     ../../home-manager/gui
     ../../home-manager/neovim
     ../../home-manager/tools
+    ../../home-manager/wezterm
     # ../../home-manager/gnome-desktop
     # ../../home-manager/desktop
     # ../../home-manager/gui

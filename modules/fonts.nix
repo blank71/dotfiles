@@ -5,17 +5,19 @@
   fonts = {
     packages = with pkgs; [
       fira-code
+      # fira-code-nerdfont
       hackgen-font
+      ibm-plex
+      ipafont
+      ipaexfont
       migu
+      # nerdfonts
       noto-fonts
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      # nerdfonts
-      # fira-code-nerdfont
-      ibm-plex
-      ipafont
-      ipaexfont
+      udev-gothic
+      udev-gothic-nf
     ];
     fontDir.enable = true;
     fontconfig = {

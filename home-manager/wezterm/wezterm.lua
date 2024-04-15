@@ -1,5 +1,3 @@
---test
-
 local wezterm = require("wezterm")
 local wayland_gnome = require("wayland_gnome")
 

@@ -7,6 +7,7 @@
     ../../home-manager/gui
     ../../home-manager/neovim
     ../../home-manager/tools
+    ../../home-manager/wezterm
   ];
 
   programs.bash = {

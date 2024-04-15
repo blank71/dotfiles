@@ -1,13 +1,11 @@
 {
   pkgs,
-  username,
   ...
 }: {
-  home.file = {
-    source = ./.;
-    recursive = true;
-  }
-  users.users."${username}".packages = with pkgs; [
+  home.file.".wezterm.lua" = {
+    source = ./wezterm.lua;
+  };
+  home.packages = with pkgs;  [
     wezterm
   ];
 }

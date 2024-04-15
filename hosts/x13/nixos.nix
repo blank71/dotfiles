@@ -11,6 +11,7 @@
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix
+    ../../modules/libreoffice.nix
     ../../modules/tailscale-server.nix
     ../../modules/podman.nix
     #../../modules/vmware.nix
@@ -61,7 +62,7 @@
   services.upower.enable = true;
 
   # fingerprint
-  #services.fprintd.enable = true;
+  services.fprintd.enable = true;
   
   # fwupd
   services.fwupd.enable = true;
@@ -79,6 +80,7 @@
 
   # xserver
   # Enable the X11 windowing system.
+  # services.displayManager.defaultSession = "gnome";
   services.xserver = {
     enable = true;
     xkb = {
@@ -86,8 +88,6 @@
       variant = "";
     };
     displayManager = {
-      # defaultSession = "none+i3";
-      defaultSession = "gnome";
       gdm.enable = true;
       gdm.wayland = true;
     };
@@ -148,7 +148,7 @@
 
   environment.systemPackages = with pkgs; [
     cloudflared
-    #fprintd
+    fprintd
     git
     trash-cli
     vscode

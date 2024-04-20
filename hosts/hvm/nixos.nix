@@ -10,12 +10,12 @@
       ./hardware-configuration.nix
 
       ../../modules/fonts.nix
-      ../../modules/gnome-desktop.nix
+      # ../../modules/gnome-desktop.nix
       ../../modules/i18n-en.nix
-      ../../modules/xremap.nix
+      # ../../modules/xremap.nix
       # ../../modules/tailscale-server.nix
 
-      ../../users/terminal/wezterm.nix
+      # ../../users/terminal/wezterm.nix
     ];
 
   # Bootloader.
@@ -40,8 +40,8 @@
   nixpkgs.config.allowUnfree = true;
 
   # Bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
+  # hardware.bluetooth.enable = true;
+  # services.blueman.enable = true;
 
   # Power management
   services.upower.enable = true;
@@ -51,19 +51,19 @@
   # services.fwupd.enable = true;
 
   # scaleing
-  environment.variables = {
-    GDK_SCALE = "1";
-    GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
-    QT_QPA_PLATFORM = "wayland;xcb";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "0";
-    QT_SCALE_FACTOR = "1";
-    XMODIFIERS="@im=fcitx";
-  };
+  # environment.variables = {
+  #   GDK_SCALE = "1";
+  #   GTK_IM_MODULE = "fcitx";
+  #   QT_IM_MODULE = "fcitx";
+  #   QT_QPA_PLATFORM = "wayland;xcb";
+  #   QT_AUTO_SCREEN_SCALE_FACTOR = "0";
+  #   QT_SCALE_FACTOR = "1";
+  #   XMODIFIERS="@im=fcitx";
+  # };
 
   # xserver
   # Enable the X11 windowing system.
-  services.displayManager.defaultSession = "gnome";
+  # services.displayManager.defaultSession = "gnome";
   services.xserver = {
     enable = true;
     displayManager = {
@@ -73,10 +73,6 @@
     desktopManager = {
       gnome = {
         enable = true;
-        # extraGSettingsOverrides = ''
-        #   [org.gnome.mutter]
-        #   experimental-features=['scale-monitor-framebuffer']
-        # '';
       };
     };
   };
@@ -84,7 +80,7 @@
   # xrdp
   services.xrdp = {
     enable = true;
-    defaultWindowManager = "gnome-remote-desktop";
+    defaultWindowManager = "";
     # port = 13389;
     openFirewall = true;
   };
@@ -95,14 +91,8 @@
     allowedTCPPorts = [ 3389 ];
   };
 
-  services.gnome.gnome-remote-desktop.enable  = true;
-
   # Configure console keymap
-  #console.keyMap = "jp106";
   console.keyMap = "us";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -136,10 +126,7 @@
 
   environment.systemPackages = with pkgs; [
     git
-    gnome3.gnome-session
-    # remmina
     trash-cli
-    vscode
     wget
   ];
 

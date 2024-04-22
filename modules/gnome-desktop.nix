@@ -8,6 +8,7 @@
     gnome.pomodoro
     gnome.gnome-keyring
     gnome.gnome-tweaks
+    gnome.gnome-sound-recorder
     #gnomeExtensions.gtk-title-bar
     gnomeExtensions.just-perfection
     gnomeExtensions.keyman

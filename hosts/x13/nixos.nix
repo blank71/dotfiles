@@ -14,6 +14,7 @@
     ../../modules/libreoffice.nix
     ../../modules/tailscale-server.nix
     ../../modules/podman.nix
+    ../../modules/verilog.nix  
     #../../modules/vmware.nix
     ../../modules/xremap.nix
 

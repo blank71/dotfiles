@@ -10,6 +10,7 @@
     gnome.gnome-tweaks
     gnome.gnome-sound-recorder
     #gnomeExtensions.gtk-title-bar
+    gnomeExtensions.appindicator
     gnomeExtensions.just-perfection
     gnomeExtensions.keyman
     gnomeExtensions.kimpanel

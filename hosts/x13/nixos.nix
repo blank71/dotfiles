@@ -148,6 +148,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    adobe-reader
     cloudflared
     fprintd
     git

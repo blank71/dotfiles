@@ -54,6 +54,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "adobe-reader-9.5.5"
+  ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -138,6 +141,9 @@
   services.openssh.enable = true;
 
   users.users."${username}" = {
+    packages = with pkgs; [
+      adobe-reader
+    ];
     isNormalUser = true;
     extraGroups = [
       "networkmanager"
@@ -148,7 +154,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    adobe-reader
     cloudflared
     fprintd
     git

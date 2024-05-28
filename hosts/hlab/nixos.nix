@@ -143,10 +143,13 @@
     ];
   };
 
+  # google-chrome.enable = true;
+  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   environment.systemPackages = with pkgs; [
     cloudflared
     git
     gnome3.gnome-session
+    ollama
     # remmina
     trash-cli
     vscode

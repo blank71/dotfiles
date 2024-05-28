@@ -63,8 +63,8 @@ vim.keymap.set("n", "<Plug>(lsp)D", "<cmd>Lspsaga show_workspace_diagnostics<cr>
 vim.keymap.set("n", "<Plug>(lsp)rn", "<cmd>Lspsaga rename<cr>")
 
 -- Fold
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+-- vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+-- vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 
 -- File tree
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")

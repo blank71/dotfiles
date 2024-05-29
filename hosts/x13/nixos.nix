@@ -14,6 +14,7 @@
     ../../modules/libreoffice.nix
     ../../modules/tailscale-server.nix
     ../../modules/podman.nix
+    ../../modules/steam.nix
     ../../modules/verilog.nix  
     #../../modules/vmware.nix
     ../../modules/xremap.nix
@@ -171,6 +172,8 @@
       vimAlias = true;
     };
   };
+  
+  virtualisation.waydroid.enable = true;
 
   # Don't touch this
   system.stateVersion = "23.05";

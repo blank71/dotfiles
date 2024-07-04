@@ -5,9 +5,9 @@
 }: {
   users.users."${username}".packages = with pkgs; [
     gnome-extension-manager
-    gnome.pomodoro
-    gnome.gnome-keyring
-    gnome.gnome-tweaks
+    gnome-pomodoro
+    gnome-keyring
+    gnome-tweaks
     gnome.gnome-sound-recorder
     #gnomeExtensions.gtk-title-bar
     gnomeExtensions.appindicator

@@ -16,7 +16,7 @@
     ../../modules/podman.nix
     ../../modules/steam.nix
     ../../modules/verilog.nix  
-    #../../modules/vmware.nix
+    ../../modules/vmware.nix
     ../../modules/xremap.nix
 
     ../../users/terminal/wezterm.nix

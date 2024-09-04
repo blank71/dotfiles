@@ -21,15 +21,6 @@
       # Bash
       nodePackages.bash-language-server
 
-      # C/C++
-      clang-tools
-
-      # CUE
-      cuelsp
-
-      # Docker
-      nodePackages.dockerfile-language-server-nodejs
-
       # Go
       gopls
 
@@ -42,13 +33,6 @@
 
       # HTML/CSS
       nodePackages.vscode-langservers-extracted
-
-      # JavaScript/TypeScript
-      nodePackages.prettier
-      nodePackages.typescript-language-server
-      nodePackages.svelte-language-server
-      nodePackages."@tailwindcss/language-server"
-      biome
 
       # Lua
       lua-language-server

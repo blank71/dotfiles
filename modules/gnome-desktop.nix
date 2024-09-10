@@ -8,7 +8,7 @@
     gnome-pomodoro
     gnome-keyring
     gnome-tweaks
-    gnome.gnome-sound-recorder
+    gnome-sound-recorder
     gnomeExtensions.appindicator
     gnomeExtensions.just-perfection
     gnomeExtensions.keyman
@@ -17,3 +17,4 @@
     gnomeExtensions.runcat
   ];
 }
+

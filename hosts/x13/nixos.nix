@@ -109,9 +109,11 @@
   };
 
   # xrdp
+  services.gnome.gnome-remote-desktop.enable = true; 
   services.xrdp = {
     enable = true;
-    defaultWindowManager = "gnome";
+    defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
+    #defaultWindowManager = "gnome-remote-desktop";
     port = 13389;
   };
 
@@ -158,6 +160,8 @@
     cloudflared
     fprintd
     git
+    gnome-session
+    gnome-remote-desktop
     trash-cli
     vscode
     wget

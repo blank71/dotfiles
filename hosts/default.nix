@@ -87,6 +87,14 @@ in {
         ./hvm/home-manager.nix
       ];
     };
+    "bl@vim" = mkHomeManagerConfiguration {
+      system = "x86_64-linux";
+      username = "bl";
+      homeDirectory = "/home/bl";
+      modules = [
+        ./vim/home-manager.nix
+      ];
+    };
   };
 }
 

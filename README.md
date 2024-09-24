@@ -30,3 +30,13 @@ home-manager
 nix-channel --update; \
 home-manager build -f hosts/vim/home.nix --show-trace
 ```
+
+## clean up
+
+```
+sudo nix store gc
+sudo nix-collect-garbage -d
+sudo nix-env --delete-generations old
+sudo nix-store --gc
+sudo nix-collect-garbage -d
+```

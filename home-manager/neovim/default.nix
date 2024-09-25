@@ -55,6 +55,9 @@
       # TOML
       taplo
 
+      # scala
+      metals
+
     ];
   };
 }

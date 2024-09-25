@@ -28,7 +28,8 @@ home-manager
 
 ```
 nix-channel --update; \
-home-manager build -f hosts/vim/home.nix --show-trace
+# home-manager build -f hosts/vim/home.nix --show-trace \
+home-manager switch -f hosts/vim/home.nix --show-trace
 ```
 
 ## clean up

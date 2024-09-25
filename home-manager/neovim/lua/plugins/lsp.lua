@@ -71,6 +71,8 @@ return {
       lspconfig.typst_lsp.setup({})
       -- Zig
       lspconfig.zls.setup({})
+      -- scala metal
+      lspconfig.metals.setup({})
 
       -- Format of diagnostics
       vim.lsp.handlers["textDocument/publishDiagnostics"] =

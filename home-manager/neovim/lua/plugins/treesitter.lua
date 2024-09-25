@@ -35,6 +35,7 @@ return {
 					"python",
 					"regex",
 					"rust",
+					"scala",
 					"scss",
 					"sql",
 					"terraform",

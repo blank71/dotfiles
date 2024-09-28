@@ -12,4 +12,9 @@
     # ../../home-manager/desktop
     # ../../home-manager/gui
   ];
+
+  home.packages = with pkgs; [
+    awscli2
+    kubectl
+  ];
 }

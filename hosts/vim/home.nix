@@ -75,6 +75,6 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../home-manager/neovim
+    ../../home-manager/new-nvim
   ];
 }

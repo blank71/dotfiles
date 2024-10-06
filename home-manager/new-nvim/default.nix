@@ -7,38 +7,38 @@
   programs.neovim = {
     enable = true;
 
-    vimAlias = true;
+    vimAlias = false;
 
     plugins = with pkgs.vimPlugins; [
-      lazy-nvim
+      #lazy-nvim
     ];
 
     extraPackages = with pkgs; [
-      xsel
-      ripgrep
-      lazygit
+      #xsel
+      #ripgrep
+      #lazygit
 
       # Go
-      gopls
+      #gopls
 
       # Haskell
-      haskell-language-server
-      haskellPackages.fourmolu
+      #haskell-language-server
+      #haskellPackages.fourmolu
 
       # Lua
-      lua-language-server
-      stylua
+      #lua-language-server
+      #stylua
 
       # OCaml
-      ocamlPackages.ocaml-lsp
-      ocamlformat
+      #ocamlPackages.ocaml-lsp
+      #ocamlformat
 
       # Shell
-      shellcheck
-      shfmt
+      #shellcheck
+      #shfmt
 
       # Terraform
-      terraform-ls
+      #terraform-ls
     ];
   };
 }

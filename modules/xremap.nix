@@ -25,8 +25,8 @@
         {
           name = "Alt";
           remap = {
-            Alt-Minus = "Alt-Left";
-            Alt-Equal = "Alt-Right";
+            Alt-KEY_LEFTBRACE = "Alt-Left";
+            Alt-KEY_RIGHTBRACE = "Alt-Right";
           };
         }
         {

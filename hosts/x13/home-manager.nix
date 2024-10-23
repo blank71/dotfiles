@@ -14,7 +14,9 @@
   ];
 
   home.packages = with pkgs; [
-    awscli2
-    kubectl
+    # awscli2
+    # kubectl
+    # nodePackages.cdktf-cli
+    # terraform
   ];
 }

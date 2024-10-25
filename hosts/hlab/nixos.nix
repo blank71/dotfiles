@@ -93,7 +93,7 @@
   # xrdp
   services.xrdp = {
     enable = true;
-    defaultWindowManager = "${pkgs.gnome3.gnome-session}/bin/gnome-session";
+    defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
     # port = 13389;
     openFirewall = true;
   };
@@ -147,8 +147,7 @@
   environment.systemPackages = with pkgs; [
     cloudflared
     git
-    gnome3.gnome-session
-    ollama
+    gnome-session
     # remmina
     trash-cli
     vscode

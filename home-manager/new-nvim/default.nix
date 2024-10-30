@@ -4,19 +4,24 @@
     recursive = true;
   };
 
+  home.packages = with pkgs;  [
+    wl-clipboard
+  ];
+
   programs.neovim = {
     enable = true;
 
     vimAlias = false;
 
     plugins = with pkgs.vimPlugins; [
-      #lazy-nvim
+      lazy-nvim
     ];
 
     extraPackages = with pkgs; [
-      #xsel
+      xsel
       #ripgrep
       #lazygit
+      wl-clipboard
 
       # Go
       #gopls
@@ -30,8 +35,8 @@
       #stylua
 
       # OCaml
-      #ocamlPackages.ocaml-lsp
-      #ocamlformat
+      ocamlPackages.ocaml-lsp
+      ocamlformat
 
       # Shell
       #shellcheck

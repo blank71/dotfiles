@@ -148,6 +148,7 @@
     cloudflared
     git
     gnome-session
+    input-remapper
     # remmina
     trash-cli
     vscode

@@ -15,6 +15,7 @@
     gnomeExtensions.kimpanel
     gnomeExtensions.resource-monitor
     gnomeExtensions.runcat
+    wl-clipboard
   ];
 }
 

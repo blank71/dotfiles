@@ -6,6 +6,7 @@
     ../../home-manager/dev
     ../../home-manager/gui
     ../../home-manager/neovim
+    ../../home-manager/nix-direnv
     ../../home-manager/tools
     ../../home-manager/wezterm
   ];
@@ -14,7 +15,6 @@
     enable = true;
 
     initExtra = ''
-    alias code-remote='code --remote ssh-remote+hv home/bl'
     '';
   };
 }

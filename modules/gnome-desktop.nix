@@ -11,7 +11,6 @@
     gnome-sound-recorder
     gnomeExtensions.appindicator
     gnomeExtensions.just-perfection
-    gnomeExtensions.keyman
     gnomeExtensions.kimpanel
     gnomeExtensions.resource-monitor
     gnomeExtensions.runcat

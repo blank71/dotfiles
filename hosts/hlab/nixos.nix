@@ -11,22 +11,10 @@
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix
-    # ../../modules/vmware.nix
     ../../modules/xremap.nix
     ../../modules/tailscale-server.nix
-
+    ../../modules/vscode.nix
     ../../users/terminal/wezterm.nix
-
-    # ../../modules/flatpak.nix
-    # ../../modules/fcitx5.nix
-    # ../../modules/gaming.nix
-    # ../../modules/networking.nix
-    # ../../modules/nix.nix
-    # ../../modules/sound.nix
-    # ../../modules/system-tools.nix
-    # ../../modules/virtualisation.nix
-    # ../../modules/xremap.nix
-    # ../../modules/xserver.nix
   ];
 
   boot = {
@@ -149,6 +137,7 @@
     git
     gnome-session
     input-remapper
+    opam
     # remmina
     trash-cli
     vscode

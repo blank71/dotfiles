@@ -8,13 +8,24 @@
     userName = username;
     serviceMode = "system";
     config = {
+      modmap = [
+        {
+          name = "HENKAN";
+          remap = {
+            CapsLock = "LEFTCTRL";
+          }; 
+          application = {
+            not = [
+                "remmina"
+            ];
+          };
+        }
+      ];
       keymap = [
         {
           name = "HENKAN";
           remap = {
-            Shift-CapsLock = "HENKAN";
-            CapsLock = "HENKAN";
-            M-Grave = "HENKAN";
+            M-Grave = "LEFTCTRL";
           }; 
           application = {
             not = [

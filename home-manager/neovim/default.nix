@@ -26,7 +26,7 @@
       gopls
 
       # GraphQL
-      nodePackages.graphql-language-service-cli
+      #nodePackages.graphql-language-service-cli
 
       # Haskell
       haskell-language-server
@@ -42,9 +42,6 @@
       # OCaml
       ocamlPackages.ocaml-lsp
       ocamlformat
-
-      # Protocol Buffers
-      buf-language-server
 
       # Shell
       shellcheck

@@ -5,13 +5,13 @@
   fonts = {
     packages = with pkgs; [
       fira-code
-      fira-code-nerdfont
       hackgen-font
       ibm-plex
       ipafont
       ipaexfont
       migu
-      nerdfonts
+      #nerd-fonts
+      nerd-fonts.fira-code
       noto-fonts
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans

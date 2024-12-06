@@ -11,6 +11,7 @@
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix
+    ../../modules/podman.nix
     ../../modules/xremap.nix
     ../../modules/tailscale-server.nix
     ../../modules/vscode.nix
@@ -60,7 +61,7 @@
 
   # xserver
   # Enable the X11 windowing system.
-  services.displayManager.defaultSession = "gnome";
+#  services.displayManager.defaultSession = "gnome";
   services.xserver = {
     enable = true;
     displayManager = {
@@ -79,10 +80,12 @@
   };
 
   # xrdp
+  services.gnome.gnome-remote-desktop.enable = true;
   services.xrdp = {
+    audio.enable = true;
     enable = true;
     defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
-    # port = 13389;
+    port = 3389;
     openFirewall = true;
   };
 
@@ -92,7 +95,10 @@
     allowedTCPPorts = [3389];
   };
 
-  services.gnome.gnome-remote-desktop.enable = true;
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
 
   # Configure console keymap
   #console.keyMap = "jp106";
@@ -135,6 +141,8 @@
   environment.systemPackages = with pkgs; [
     cloudflared
     git
+    glibc
+    gnome-remote-desktop
     gnome-session
     input-remapper
     opam

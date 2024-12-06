@@ -165,6 +165,9 @@
     trash-cli
     vscode
     wget
+
+    libpqxx
+    sqlc
   ];
 
   programs = {

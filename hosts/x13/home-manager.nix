@@ -14,9 +14,6 @@
   ];
 
   home.packages = with pkgs; [
-    # awscli2
-    # kubectl
-    # nodePackages.cdktf-cli
-    # terraform
+    warp-terminal
   ];
 }

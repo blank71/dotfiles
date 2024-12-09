@@ -141,12 +141,9 @@
   environment.systemPackages = with pkgs; [
     cloudflared
     git
-    glibc
     gnome-remote-desktop
     gnome-session
     input-remapper
-    opam
-    # remmina
     trash-cli
     vscode
     wget

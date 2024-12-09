@@ -11,6 +11,11 @@
     ../../home-manager/wezterm
   ];
 
+  home.packages = with pkgs; [
+    warp-terminal
+  ];
+
+
   programs.bash = {
     enable = true;
 

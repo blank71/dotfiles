@@ -17,6 +17,7 @@
     ../../modules/steam.nix
     ../../modules/verilog.nix  
     ../../modules/vmware.nix
+    ../../modules/vscode.nix
     ../../modules/xremap.nix
 
     ../../users/terminal/wezterm.nix

@@ -18,6 +18,9 @@ config.initial_rows = 20
 config.font =
         wezterm.font("UDEV Gothic NFLG")
 
+config.window_decorations = "RESIZE"
+config.show_close_tab_button_in_tabs = false
+
 wayland_gnome.apply_to_config(config)
 
 return config

@@ -16,6 +16,8 @@
     ../../modules/podman.nix
     ../../modules/steam.nix
     ../../modules/verilog.nix  
+    ../../modules/virt.nix
+    ../../modules/xremap.nix
     ../../modules/vmware.nix
     ../../modules/vscode.nix
     ../../modules/xremap.nix
@@ -172,7 +174,10 @@
   ];
 
   programs = {
-    git.enable = true;
+    git = {
+      enable = true;
+      prompt.enable = true;
+    };
     neovim = {
       enable = true;
       defaultEditor = true;

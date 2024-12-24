@@ -17,23 +17,11 @@
     ../../modules/steam.nix
     ../../modules/verilog.nix  
     ../../modules/virt.nix
-    ../../modules/xremap.nix
     ../../modules/vmware.nix
     ../../modules/vscode.nix
     ../../modules/xremap.nix
 
     ../../users/terminal/wezterm.nix
-
-    # ../../modules/flatpak.nix
-    # ../../modules/fcitx5.nix
-    # ../../modules/gaming.nix
-    # ../../modules/networking.nix
-    # ../../modules/nix.nix
-    # ../../modules/sound.nix
-    # ../../modules/system-tools.nix
-    # ../../modules/virtualisation.nix
-    # ../../modules/xremap.nix
-    # ../../modules/xserver.nix
   ];
 
   boot = {

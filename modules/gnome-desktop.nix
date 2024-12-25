@@ -6,7 +6,6 @@
   users.users."${username}".packages = with pkgs; [
     gnome-extension-manager
     gnome-pomodoro
-    gnome-keyring
     gnome-tweaks
     gnome-sound-recorder
     gnomeExtensions.appindicator
@@ -16,5 +15,7 @@
     gnomeExtensions.runcat
     wl-clipboard
   ];
+  services.gnome.gnome-keyring.enable = true;
+  programs.ssh.startAgent = true;
 }
 

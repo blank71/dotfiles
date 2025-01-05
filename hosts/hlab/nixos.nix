@@ -151,7 +151,10 @@
   ];
 
   programs = {
-    git.enable = true;
+    git = {
+      enable = true;
+      prompt.enable = true;
+    };
     neovim = {
       enable = true;
       defaultEditor = true;

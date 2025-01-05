@@ -7,6 +7,8 @@
     bindkey -e
     bindkey '^[[1;5C' forward-word
     bindkey '^[[1;5D' backward-word
+    bindkey "^[[3~" delete-char
+    bindkey "^H" backward-delete-char
 
     # End of lines configured by zsh-newuser-install
     # The following lines were added by compinstall

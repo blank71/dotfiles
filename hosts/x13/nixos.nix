@@ -20,6 +20,7 @@
     ../../modules/vmware.nix
     ../../modules/vscode.nix
     ../../modules/xremap.nix
+    ../../modules/zsh.nix
 
     ../../users/terminal/wezterm.nix
   ];
@@ -116,7 +117,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -163,23 +164,6 @@
   ];
 
   programs = {
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-
-      histSize = 10000;
-      histFile = "$HOME/.zsh_history";
-      promptInit = ''
-      function prompt {
-      PROMPT="%F{green}%n@%M:%~%f%F{yellow}$(__git_ps1 " (%s)")%f %F{cyan}%T%f "$'\n'"%# "
-      }
-
-      autoload -Uz add-zsh-hook
-      add-zsh-hook precmd prompt
-      '';
-    };
     git = {
       enable = true;
       prompt.enable = true;
@@ -191,7 +175,6 @@
       vimAlias = true;
     };
   };
-  users.defaultUserShell = pkgs.zsh;
   
   virtualisation.waydroid.enable = true;
 

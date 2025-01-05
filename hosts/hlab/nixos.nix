@@ -15,6 +15,7 @@
     ../../modules/xremap.nix
     ../../modules/tailscale-server.nix
     ../../modules/vscode.nix
+    ../../modules/zsh.nix
     ../../users/terminal/wezterm.nix
   ];
 
@@ -108,7 +109,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

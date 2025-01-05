@@ -10,5 +10,6 @@
     };
 
     bash.enable = true; # see note on other shells below
+    zsh.enable = true; # see note on other shells below
   };
 }

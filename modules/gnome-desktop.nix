@@ -4,7 +4,6 @@
   ...
 }: {
   users.users."${username}".packages = with pkgs; [
-    gnome-extension-manager
     gnome-pomodoro
     gnome-tweaks
     gnome-sound-recorder

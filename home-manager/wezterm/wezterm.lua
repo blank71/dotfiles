@@ -4,22 +4,21 @@ local wayland_gnome = require("wayland_gnome")
 local config = {}
 
 if wezterm.config_builder then
-        config = wezterm.config_builder()
+	config = wezterm.config_builder()
 end
 
 config.front_end = "WebGpu"
 config.enable_wayland = true
 
 config.color_scheme = "AdventureTime"
-config.font_size = 12
+config.font_size = 16
 config.initial_cols = 120
 config.initial_rows = 20
 
-config.font =
-        wezterm.font("UDEV Gothic NFLG")
+config.font = wezterm.font("UDEV Gothic NFLG")
 
-config.window_decorations = "RESIZE"
-config.tab_bar_at_bottom = false
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.tab_bar_at_bottom = true
 
 wayland_gnome.apply_to_config(config)
 

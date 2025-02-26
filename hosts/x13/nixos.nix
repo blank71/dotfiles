@@ -63,6 +63,9 @@
   
   # fwupd
   services.fwupd.enable = true;
+  
+  # gvfs
+  services.gvfs.enable = true;
 
   # scaleing
   environment.variables = {
@@ -161,6 +164,10 @@
 
     libpqxx
     sqlc
+
+    gvfs
+    usbutils
+    gphoto2
   ];
 
   programs = {

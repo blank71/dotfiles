@@ -168,7 +168,6 @@
     usbutils
     gphoto2
 
-    gnome-connections
   ];
 
   programs = {

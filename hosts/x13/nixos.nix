@@ -17,7 +17,7 @@
     ../../modules/steam.nix
     ../../modules/verilog.nix  
     ../../modules/virt.nix
-    ../../modules/vmware.nix
+    #../../modules/vmware.nix
     ../../modules/vscode.nix
     ../../modules/xremap.nix
     ../../modules/zsh.nix
@@ -156,6 +156,7 @@
     cloudflared
     fprintd
     git
+    libsecret
     gnome-session
     gnome-remote-desktop
     input-remapper
@@ -174,6 +175,12 @@
     git = {
       enable = true;
       prompt.enable = true;
+      config.credential.helper = "libsecret";
+      # config = {
+      #   credential.helper = "${
+      #       pkgs.git.override { withLibsecret = true; }
+      #     }/bin/git-credential-libsecret";
+      # };
     };
     neovim = {
       enable = true;

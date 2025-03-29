@@ -17,9 +17,13 @@ config.initial_rows = 20
 
 config.font = wezterm.font("UDEV Gothic NFLG")
 
+-- config.window_decorations = "TITLE|RESIZE"
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 
-wayland_gnome.apply_to_config(config)
+config.enable_wayland = true
+-- wayland_gnome.apply_to_config(config)
+
+config.integrated_title_button_style = "Gnome"
 
 return config

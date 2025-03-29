@@ -9,5 +9,6 @@
     vscode
     wget
     zip
+    zellij
   ];
 }

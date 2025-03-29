@@ -11,7 +11,8 @@
       ipaexfont
       migu
       #nerd-fonts
-      nerd-fonts.fira-code
+      #nerd-fonts.fira-code
+      fira-code
       noto-fonts
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans

@@ -4,7 +4,7 @@ local wayland_gnome = require("wayland_gnome")
 local config = {}
 
 if wezterm.config_builder then
-	config = wezterm.config_builder()
+  config = wezterm.config_builder()
 end
 
 config.front_end = "WebGpu"
@@ -22,6 +22,7 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.tab_bar_at_bottom = false
 
 config.enable_wayland = true
+config.hide_mouse_cursor_when_typing = false
 -- wayland_gnome.apply_to_config(config)
 
 config.integrated_title_button_style = "Gnome"

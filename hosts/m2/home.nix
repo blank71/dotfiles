@@ -1,10 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
   home = {
     username = "bl";
     homeDirectory = "/Users/bl";
-    stateVersion = "23.11";
+    stateVersion = "24.11";
     
     packages = with pkgs; [
       # macOS向けパッケージ
@@ -20,8 +22,12 @@
     
     git = {
       enable = true;
-      userName = "bl";
-      userEmail = "your-email@example.com";
+      extraConfig = {
+        core.editor = "vim";
+        commit.verbose = "true";
+        commit.gpgsign = "true";
+        gpg.format = "ssh";
+      };
     };
     
     # 他のプログラム設定

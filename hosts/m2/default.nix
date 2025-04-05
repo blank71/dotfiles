@@ -58,11 +58,38 @@
   # Homebrewサポート（オプション）
   homebrew = {
     enable = true;
-    onActivation.autoUpdate = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap"; # 明示的に管理されていないものを削除
+      upgrade = true;
+    };
+    global = {
+      brewfile = true;
+      lockfiles = true;
+    };
     taps = [
       "homebrew/core"
       "homebrew/cask"
+      "homebrew/cask-fonts"
+      "homebrew/services"
     ];
+    # ターミナルアプリケーション
+    brews = [
+      # 例: ここに必要なbrewsを追加
+      # "mas" # Mac App Store CLIクライアント
+    ];
+    # GUIアプリケーション
+    casks = [
+      # 例: ここに必要なcasksを追加
+      # "google-chrome"
+      # "visual-studio-code"
+    ];
+    # Mac App Storeアプリケーション
+    masApps = {
+      # 例: ここに必要なMac App Storeアプリを追加
+      # "LINE" = 539883307;
+      # "Xcode" = 497799835;
+    };
   };
 
   # nix-darwinのサービス設定

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Homebrewが未インストールの場合はインストール
+if ! command -v brew &> /dev/null; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 # nix-darwinが未インストールの場合はインストール
 if ! command -v darwin-rebuild &> /dev/null; then
   echo "Installing nix-darwin..."

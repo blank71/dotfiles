@@ -20,10 +20,32 @@
             ];
           };
         }
+        {
+          name = "CAPSLOCK";
+          remap = {
+            CapsLock = "LEFTCTRL";
+          }; 
+          application = {
+            not = [
+                "remmina"
+            ];
+          };
+        }
       ];
       keymap = [
         {
           name = "HENKAN";
+          remap = {
+            M-Grave = "LEFTCTRL";
+          }; 
+          application = {
+            not = [
+                "remmina"
+            ];
+          };
+        }
+        {
+          name = "CAPSLOCK";
           remap = {
             M-Grave = "LEFTCTRL";
           }; 

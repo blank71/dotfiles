@@ -81,17 +81,7 @@
 
   # xserver
   # Enable the X11 windowing system.
-  services.displayManager.defaultSession = "gnome";
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-    displayManager = {
-      gdm.enable = true;
-      gdm.wayland = true;
-    };
+  services = { 
     desktopManager = {
       gnome = {
         enable = true;
@@ -100,6 +90,18 @@
           experimental-features=['scale-monitor-framebuffer']
         '';
       };
+    };
+    displayManager = {
+      defaultSession = "gnome";
+      gdm.enable = true;
+      gdm.wayland = true;
+    };
+  };
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
     };
   };
 

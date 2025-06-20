@@ -20,7 +20,7 @@
     extraPackages = with pkgs; [
       xsel
       #ripgrep
-      #lazygit
+      lazygit
       wl-clipboard
 
       # Go

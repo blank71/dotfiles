@@ -15,9 +15,7 @@
             CapsLock = "LEFTCTRL";
           }; 
           application = {
-            not = [
-                "remmina"
-            ];
+            not = [];
           };
         }
       ];

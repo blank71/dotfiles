@@ -187,8 +187,6 @@
     };
   };
   
-  virtualisation.waydroid.enable = true;
-
   # Don't touch this
   system.stateVersion = "23.05";
 

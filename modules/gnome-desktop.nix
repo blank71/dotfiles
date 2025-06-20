@@ -15,6 +15,6 @@
     wl-clipboard
   ];
   services.gnome.gnome-keyring.enable = true;
-  programs.ssh.startAgent = true;
+  # programs.ssh.startAgent = true;
 }
 

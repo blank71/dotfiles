@@ -47,9 +47,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "adobe-reader-9.5.5"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -142,7 +140,6 @@
 
   users.users."${username}" = {
     packages = with pkgs; [
-      adobe-reader
     ];
     isNormalUser = true;
     extraGroups = [
@@ -190,8 +187,6 @@
     };
   };
   
-  virtualisation.waydroid.enable = true;
-
   # Don't touch this
   system.stateVersion = "23.05";
 

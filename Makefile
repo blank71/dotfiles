@@ -3,7 +3,10 @@
 HOST := $(shell hostname)
 
 update:
-	sudo nix flake update --flake "/home/bl/dotfiles/"
+	sudo nix flake update \
+	--extra-experimental-features nix-command \
+	--extra-experimental-features flakes \
+	--flake "/home/bl/dotfiles/"
 
 build:
 	sudo nixos-rebuild switch --show-trace --refresh --verbose --upgrade --flake "/home/bl/dotfiles/#$(HOST)"; \

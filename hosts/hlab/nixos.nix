@@ -78,36 +78,29 @@
       gdm.wayland = true;
     };
   };
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
-
+  # services.xserver = {
+  #   enable = true;
+  #   xkb = {
+  #     layout = "us";
+  #     variant = "";
+  #   };
+  # };
 
   # xrdp
-  services.gnome.gnome-remote-desktop.enable = true;
-  systemd.services."gnome-remote-desktop".wantedBy = [ "graphical.target" ];
+  services.gnome.gnome-remote-desktop.enable = true; 
   # services.xrdp = {
-  #   audio.enable = true;
   #   enable = true;
   #   defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
-  #   port = 3389;
-  #   openFirewall = true;
+  #   #defaultWindowManager = "gnome-remote-desktop";
+  #   port = 13389;
   # };
-  #
+
+  systemd.services."gnome-remote-desktop".wantedBy = [ "graphical.target" ];
   networking.firewall = {
     enable = true;
     allowedUDPPorts = [3389];
     allowedTCPPorts = [3389];
   };
-
-  # gnome-remote-desktop
-  # services.xrdp.enable = true;
-  # services.xrdp.defaultWindowManager = "${pkgs.gnome.gnome-session}/bin/gnome-session";
-  # services.xrdp.openFirewall = true;
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;

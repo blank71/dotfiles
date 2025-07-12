@@ -8,9 +8,13 @@ update:
 	--extra-experimental-features flakes \
 	--flake "/home/bl/dotfiles/"
 
-build:
+build-nixos:
 	sudo nixos-rebuild switch --show-trace --refresh --verbose --upgrade --flake "/home/bl/dotfiles/#$(HOST)"; \
+
+build-home-manager:
 	nix run home-manager -- switch --flake "/home/bl/dotfiles/#bl@$(HOST)"
+
+build: build-nixos build-home-manager
 
 update-build: update build
 

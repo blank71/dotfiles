@@ -8,6 +8,8 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../modules/mathematica
+
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix

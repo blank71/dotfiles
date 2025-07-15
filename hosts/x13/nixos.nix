@@ -95,21 +95,27 @@
       gdm.wayland = true;
     };
   };
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
+  # services.xserver = {
+  #   enable = true;
+  #   xkb = {
+  #     layout = "us";
+  #     variant = "";
+  #   };
+  # };
 
   # xrdp
   services.gnome.gnome-remote-desktop.enable = true; 
-  services.xrdp = {
+  # services.xrdp = {
+  #   enable = true;
+  #   defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
+  #   #defaultWindowManager = "gnome-remote-desktop";
+  #   port = 13389;
+  # };
+  systemd.services."gnome-remote-desktop".wantedBy = [ "graphical.target" ];
+  networking.firewall = {
     enable = true;
-    defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
-    #defaultWindowManager = "gnome-remote-desktop";
-    port = 13389;
+    allowedUDPPorts = [3389];
+    allowedTCPPorts = [3389];
   };
 
   # Configure console keymap

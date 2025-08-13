@@ -4,36 +4,47 @@
   hostname,
   username,
   ...
-}: {
-  imports =
-    [
-      ./hardware-configuration.nix
+}:
+{
+  imports = [
+    ./hardware-configuration.nix
 
-      ../../modules/fonts.nix
-      # ../../modules/gnome-desktop.nix
-      ../../modules/i18n-en.nix
-      # ../../modules/xremap.nix
-      # ../../modules/tailscale-server.nix
-
-      # ../../users/terminal/wezterm.nix
-    ];
+    ../../modules/fonts.nix
+    ../../modules/gnome-desktop.nix
+    ../../modules/i18n-en.nix
+    ../../modules/podman.nix
+    ../../modules/xremap.nix
+    ../../modules/tailscale-server.nix
+    ../../modules/vscode.nix
+    ../../modules/zsh.nix
+    ../../users/terminal/wezterm.nix
+  ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot = {
+    loader = {
+      grub = {
+        enable = true;
+        device = "/dev/vda";
+        useOSProber = true;
+      };
+    };
+  };
 
   # Enable networking
   networking.hostName = "${hostname}";
   networking.networkmanager.enable = true;
-  
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
   # nix
   nix = {
     settings = {
-       experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
@@ -51,19 +62,19 @@
   # services.fwupd.enable = true;
 
   # scaleing
-  # environment.variables = {
-  #   GDK_SCALE = "1";
-  #   GTK_IM_MODULE = "fcitx";
-  #   QT_IM_MODULE = "fcitx";
-  #   QT_QPA_PLATFORM = "wayland;xcb";
-  #   QT_AUTO_SCREEN_SCALE_FACTOR = "0";
-  #   QT_SCALE_FACTOR = "1";
-  #   XMODIFIERS="@im=fcitx";
-  # };
+  environment.variables = {
+    GDK_SCALE = "1";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "0";
+    QT_SCALE_FACTOR = "1";
+    XMODIFIERS = "@im=fcitx";
+  };
 
   # xserver
   # Enable the X11 windowing system.
-  services = { 
+  services = {
     desktopManager = {
       gnome = {
         enable = true;
@@ -79,27 +90,20 @@
       gdm.wayland = true;
     };
   };
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
 
-  # xrdp
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "";
-    # port = 13389;
-    openFirewall = true;
-  };
+  services.gnome.gnome-remote-desktop.enable = true;
 
+  systemd.services."gnome-remote-desktop".wantedBy = [ "graphical.target" ];
   networking.firewall = {
     enable = true;
     allowedUDPPorts = [ 3389 ];
     allowedTCPPorts = [ 3389 ];
   };
+
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
 
   # Configure console keymap
   console.keyMap = "us";
@@ -133,14 +137,24 @@
     ];
   };
 
+  # google-chrome.enable = true;
+  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   environment.systemPackages = with pkgs; [
+    cloudflared
     git
+    gnome-remote-desktop
+    gnome-session
+    input-remapper
     trash-cli
+    vscode
     wget
   ];
 
   programs = {
-    git.enable = true;
+    git = {
+      enable = true;
+      prompt.enable = true;
+    };
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -152,6 +166,6 @@
   # Don't touch this
   system.stateVersion = "23.05";
 
-  system.autoUpgrade.enable  = true;
-  system.autoUpgrade.allowReboot  = false;
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
 }

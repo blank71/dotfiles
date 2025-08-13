@@ -57,7 +57,7 @@ in {
     };
     "hvm" = mkNixosSystem {
       system = "x86_64-linux";
-      hostname = "home-vm";
+      hostname = "hvm";
       username = "bl";
       modules = [
         ./hvm/nixos.nix

@@ -4,7 +4,8 @@
   hostname,
   username,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
 
@@ -15,9 +16,10 @@
     ../../modules/tailscale-server.nix
     ../../modules/podman.nix
     ../../modules/steam.nix
-    ../../modules/verilog.nix  
-    ../../modules/virt.nix
+    ../../modules/tidal-cycles.nix
+    ../../modules/verilog.nix
     #../../modules/vmware.nix
+    ../../modules/virt.nix
     ../../modules/vscode.nix
     ../../modules/xremap.nix
     ../../modules/zsh.nix
@@ -43,12 +45,15 @@
   # nix
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [];
+  nixpkgs.config.permittedInsecurePackages = [ ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -59,10 +64,10 @@
 
   # fingerprint
   services.fprintd.enable = true;
-  
+
   # fwupd
   services.fwupd.enable = true;
-  
+
   # gvfs
   services.gvfs.enable = true;
 
@@ -75,12 +80,13 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "0";
     QT_SCALE_FACTOR = "1";
     XMODIFIERS = "@im=fcitx";
-    XDG_CURRENT_DESKTOP= "gnome";
+    XDG_CURRENT_DESKTOP = "gnome";
+    SSH_AUTH_SOCK = "~${username}/.bitwarden-ssh-agent.sock";
   };
 
   # xserver
   # Enable the X11 windowing system.
-  services = { 
+  services = {
     desktopManager = {
       gnome = {
         enable = true;
@@ -105,7 +111,7 @@
   # };
 
   # xrdp
-  services.gnome.gnome-remote-desktop.enable = true; 
+  services.gnome.gnome-remote-desktop.enable = true;
   # services.xrdp = {
   #   enable = true;
   #   defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
@@ -115,8 +121,8 @@
   systemd.services."gnome-remote-desktop".wantedBy = [ "graphical.target" ];
   networking.firewall = {
     enable = true;
-    allowedUDPPorts = [3389];
-    allowedTCPPorts = [3389];
+    allowedUDPPorts = [ 3389 ];
+    allowedTCPPorts = [ 3389 ];
   };
 
   # Configure console keymap
@@ -134,8 +140,8 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    # Enable JACK for SuperCollider and audio applications
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -154,6 +160,7 @@
       "wheel"
       "audio"
       "video"
+      "jackaudio"
     ];
   };
 
@@ -193,7 +200,7 @@
       vimAlias = true;
     };
   };
-  
+
   # Don't touch this
   system.stateVersion = "23.05";
 

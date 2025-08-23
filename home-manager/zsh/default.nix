@@ -17,6 +17,7 @@
 
       autoload -Uz compinit
       compinit
+      export SSH_AUTH_SOCK=/home/bl/.bitwarden-ssh-agent.sock
     '';
   };
 }

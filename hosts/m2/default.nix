@@ -43,6 +43,7 @@
   ];
 
   # macOSシステム設定
+  security.pam.enableSudoTouchIdAuth = true;
   system.defaults = {
     NSGlobalDomain = {
     };
@@ -67,22 +68,25 @@
       brewfile = true;
       lockfiles = true;
     };
-    taps = [
-      "homebrew/core"
-      "homebrew/cask"
-      "homebrew/cask-fonts"
-      "homebrew/services"
-    ];
+    #taps = [
+    #  "homebrew/core"
+    #  "homebrew/cask"
+    #  "homebrew/cask-fonts"
+    #  "homebrew/services"
+    #];
     # ターミナルアプリケーション
     brews = [
-      # 例: ここに必要なbrewsを追加
-      # "mas" # Mac App Store CLIクライアント
+      "zsh-completions"
+      "zsh-git-prompt"
+      "python@3.13"
+      "podman"
     ];
     # GUIアプリケーション
     casks = [
-      # 例: ここに必要なcasksを追加
-      # "google-chrome"
-      # "visual-studio-code"
+      "bitwarden"
+      "vmware-fusion"
+      "wezterm"
+      "podman-desktop"
     ];
     # Mac App Storeアプリケーション
     masApps = {

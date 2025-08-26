@@ -26,7 +26,8 @@
   ];
 
   # ホスト名設定
-  networking.hostName = "m2";
+  #networking.hostName = "m2";
+  networking.hostName = "A1017800-cdo0702ykondo01";
   
   # macOS固有のNix設定
   nix.settings = {
@@ -79,14 +80,17 @@
       "zsh-completions"
       "zsh-git-prompt"
       "python@3.13"
-      "podman"
+      "neovim"
+      "rust"
     ];
     # GUIアプリケーション
     casks = [
       "bitwarden"
-      "vmware-fusion"
+      "firefox"
       "wezterm"
       "podman-desktop"
+      "tailscale"
+      "windows-app"
     ];
     # Mac App Storeアプリケーション
     masApps = {

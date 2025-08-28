@@ -69,12 +69,13 @@
       brewfile = true;
       lockfiles = true;
     };
-    #taps = [
+    taps = [
     #  "homebrew/core"
     #  "homebrew/cask"
     #  "homebrew/cask-fonts"
     #  "homebrew/services"
-    #];
+      "hashicorp/tap"
+    ];
     # ターミナルアプリケーション
     brews = [
       "zsh-completions"
@@ -82,15 +83,16 @@
       "python@3.13"
       "neovim"
       "rust"
+      "podman"
+      "hashicorp/tap/terraform"
     ];
     # GUIアプリケーション
     casks = [
       "bitwarden"
       "firefox"
       "wezterm"
-      "podman-desktop"
-      "tailscale"
       "windows-app"
+      "alt-tab"
     ];
     # Mac App Storeアプリケーション
     masApps = {

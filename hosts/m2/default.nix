@@ -8,8 +8,7 @@
 
 {
   imports = [
-
-    ./fonts.nix
+./fonts.nix
     #../../modules/gnome-desktop.nix
     #../../modules/i18n-en.nix
     #../../modules/libreoffice.nix
@@ -85,6 +84,9 @@
       "rust"
       "podman"
       "hashicorp/tap/terraform"
+      "uv"
+      "protobuf"
+      "tree"
     ];
     # GUIアプリケーション
     casks = [

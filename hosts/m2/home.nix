@@ -29,7 +29,8 @@
         gpg.format = "ssh";
         user.name = "blank71";
         user.email = "8blank71@gmail.com";
-        user.signingkey = "/User/bl/.ssh/id_ecdsa_512";
+        user.signingkey = "/Users/bl/.ssh/id_ecdsa_512";
+        color.ui = "true";
       };
     };
     

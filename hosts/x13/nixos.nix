@@ -25,7 +25,7 @@
     ../../modules/zsh.nix
 
     ../../users/terminal/wezterm.nix
-    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x13
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x13-intel
   ];
 
   boot = {

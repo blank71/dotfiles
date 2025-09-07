@@ -81,7 +81,6 @@
     QT_SCALE_FACTOR = "1";
     XMODIFIERS = "@im=fcitx";
     XDG_CURRENT_DESKTOP = "gnome";
-    SSH_AUTH_SOCK = "~${username}/.bitwarden-ssh-agent.sock";
   };
 
   # xserver

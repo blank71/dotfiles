@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     bitwarden-desktop
+    devcontainer
     fuchsia-cursor
     gnumake
     htop
@@ -12,6 +13,7 @@
     wget
     zip
     zellij
+    basex
   ];
   home.pointerCursor = 
     let 

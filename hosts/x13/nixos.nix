@@ -16,7 +16,7 @@
     ../../modules/tailscale-server.nix
     ../../modules/podman.nix
     ../../modules/steam.nix
-    ../../modules/tidal-cycles.nix
+    #../../modules/tidal-cycles.nix
     ../../modules/verilog.nix
     #../../modules/vmware.nix
     ../../modules/virt.nix

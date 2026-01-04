@@ -65,7 +65,13 @@ return {
       -- Terraform
       -- lspconfig.terraformls.setup({})
       -- Typst
-      -- lspconfig.typst_lsp.setup({})
+      lspconfig.tinymist.setup({
+        settings = {
+          formatterMode = "typstyle",
+          exportPdf = "onSave",
+          semanticTokens = "enable"
+        }
+      })
       -- Zig
       -- lspconfig.zls.setup({})
       -- scala metal
@@ -121,4 +127,19 @@ return {
       }
     end,
   },
+
+  -- typst-preview
+  {
+    "chomosuke/typst-preview.nvim",
+    lazy = false, -- or ft = 'typst'
+    version = '1.*',
+    opts = { -- lazy.nvim will implicitly calls `setup {}`
+      port = 58080, -- port to use for the preview server
+    },  
+  },
+  {
+    "github/copilot.vim",
+    lazy=false,
+  },
 }
+

@@ -5,6 +5,8 @@
   };
 
   home.packages = with pkgs;  [
+    devcontainer
+    tinymist
     wl-clipboard
   ];
 
@@ -15,9 +17,12 @@
 
     plugins = with pkgs.vimPlugins; [
       lazy-nvim
+      typst-preview-nvim
+      copilot-vim
     ];
 
     extraPackages = with pkgs; [
+      nodePackages.nodejs
       xsel
       #ripgrep
       lazygit

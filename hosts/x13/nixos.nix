@@ -16,7 +16,7 @@
     ../../modules/tailscale-server.nix
     ../../modules/podman.nix
     ../../modules/steam.nix
-    ../../modules/tidal-cycles.nix
+    #../../modules/tidal-cycles.nix
     ../../modules/verilog.nix
     #../../modules/vmware.nix
     ../../modules/virt.nix
@@ -24,7 +24,7 @@
     ../../modules/xremap.nix
     ../../modules/zsh.nix
 
-    ../../users/terminal/wezterm.nix
+    # ../../users/terminal/wezterm.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x13-intel
   ];
 
@@ -81,7 +81,6 @@
     QT_SCALE_FACTOR = "1";
     XMODIFIERS = "@im=fcitx";
     XDG_CURRENT_DESKTOP = "gnome";
-    SSH_AUTH_SOCK = "~${username}/.bitwarden-ssh-agent.sock";
   };
 
   # xserver
@@ -180,6 +179,7 @@
     usbutils
     gphoto2
 
+    firmware-updater
   ];
 
   programs = {

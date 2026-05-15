@@ -17,13 +17,10 @@
     ../../modules/podman.nix
     ../../modules/steam.nix
     #../../modules/tidal-cycles.nix
-    ../../modules/verilog.nix
-    #../../modules/vmware.nix
     ../../modules/vscode.nix
     ../../modules/xremap.nix
     ../../modules/zsh.nix
 
-    # ../../users/terminal/wezterm.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x13-intel
   ];
 

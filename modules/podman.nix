@@ -1,10 +1,10 @@
-{ 
-  pkgs, 
+{
   username,
   ...
-}: {
+}:
+{
   virtualisation = {
-    containers.registries.search = ["docker.io"];
+    containers.registries.search = [ "docker.io" ];
     podman = {
       enable = true;
 

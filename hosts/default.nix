@@ -1,10 +1,12 @@
-inputs: let
-  mkNixosSystem = {
-    system,
-    hostname,
-    username,
-    modules,
-  }:
+inputs:
+let
+  mkNixosSystem =
+    {
+      system,
+      hostname,
+      username,
+      modules,
+    }:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system modules;
       specialArgs = {
@@ -12,32 +14,32 @@ inputs: let
       };
     };
 
-  mkHomeManagerConfiguration = {
-    system,
-    username,
-    modules,
-  }:
+  mkHomeManagerConfiguration =
+    {
+      system,
+      username,
+      modules,
+    }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
-        inherit system ;
+        inherit system;
         config = {
           allowUnfree = true;
         };
       };
-      modules =
-        modules
-        ++ [
-          {
-            home = {
-              inherit username;
-              homeDirectory = "/home/${username}";
-              stateVersion = "22.11";
-            };
-            programs.home-manager.enable = true;
-          }
-        ];
+      modules = modules ++ [
+        {
+          home = {
+            inherit username;
+            homeDirectory = "/home/${username}";
+            stateVersion = "22.11";
+          };
+          programs.home-manager.enable = true;
+        }
+      ];
     };
-in {
+in
+{
   nixos = {
     "x13" = mkNixosSystem {
       system = "x86_64-linux";
@@ -45,7 +47,7 @@ in {
       username = "bl";
       modules = [
         ./x13/nixos.nix
-      ];      
+      ];
     };
     "hlab" = mkNixosSystem {
       system = "x86_64-linux";
@@ -53,7 +55,7 @@ in {
       username = "bl";
       modules = [
         ./hlab/nixos.nix
-      ];      
+      ];
     };
     "hvm" = mkNixosSystem {
       system = "x86_64-linux";
@@ -61,7 +63,7 @@ in {
       username = "bl";
       modules = [
         ./hvm/nixos.nix
-      ];      
+      ];
     };
   };
 
@@ -97,4 +99,3 @@ in {
     };
   };
 }
-

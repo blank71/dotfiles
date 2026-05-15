@@ -1,8 +1,9 @@
 {
   config,
-  pkgs, 
+  pkgs,
   ...
-}: {
+}:
+{
   environment.systemPackages = [ pkgs.tailscale ];
   services.tailscale.enable = true;
   networking.firewall = {

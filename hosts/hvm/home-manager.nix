@@ -1,7 +1,4 @@
 {
-  pkgs,
-  ...
-}: {
   imports = [
     # ../../home-manager/dev
     # ../../home-manager/gui
@@ -13,7 +10,6 @@
   programs.bash = {
     enable = true;
 
-    initExtra = ''
-    '';
+    initExtra = "";
   };
 }

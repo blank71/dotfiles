@@ -7,13 +7,13 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	defaults = { lazy = true },
-	spec = {
-		import = "plugins",
-	},
-	install = {
-		colorscheme = { "tokyonight" },
-	},
+    defaults = { lazy = true },
+    spec = {
+        import = "plugins",
+    },
+    install = {
+        colorscheme = { "tokyonight" },
+    },
 })
 
 require("config.keymaps")

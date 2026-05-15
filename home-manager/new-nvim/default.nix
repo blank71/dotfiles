@@ -1,10 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.file.".config/nvim" = {
     source = ./.;
     recursive = true;
   };
 
-  home.packages = with pkgs;  [
+  home.packages = with pkgs; [
     wl-clipboard
   ];
 

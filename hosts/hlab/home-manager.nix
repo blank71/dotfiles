@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../../home-manager/dev
     ../../home-manager/gui
@@ -16,11 +17,9 @@
   home.packages = with pkgs; [
   ];
 
-
   programs.bash = {
     enable = true;
 
-    initExtra = ''
-    '';
+    initExtra = "";
   };
 }

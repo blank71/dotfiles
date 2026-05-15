@@ -16,25 +16,25 @@ vim.keymap.set("n", "<leader>tf", "<Cmd>ToggleTerm direction=float<CR>")
 vim.keymap.set("n", "<leader>th", "<Cmd>ToggleTerm direction=horizontal size=15<CR>")
 vim.keymap.set("n", "<leader>tv", "<Cmd>ToggleTerm direction=vertical size=70<CR>")
 vim.keymap.set("n", "<leader>gg", function()
-	local Terminal = require("toggleterm.terminal").Terminal
-	local lazygit = Terminal:new({
-		cmd = "lazygit",
-		direction = "float",
-		float_opts = {
-			border = "curved",
-		},
-	})
-	lazygit:toggle()
+    local Terminal = require("toggleterm.terminal").Terminal
+    local lazygit = Terminal:new({
+        cmd = "lazygit",
+        direction = "float",
+        float_opts = {
+            border = "curved",
+        },
+    })
+    lazygit:toggle()
 end)
 
 -- Buffer
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>")
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<cr>")
 vim.keymap.set("n", ";q", function()
-	require("mini.bufremove").delete(0, false)
+    require("mini.bufremove").delete(0, false)
 end)
 vim.keymap.set("n", ";Q", function()
-	require("mini.bufremove").delete(0, true)
+    require("mini.bufremove").delete(0, true)
 end)
 vim.keymap.set("n", "<leader>bh", vim.cmd.split)
 vim.keymap.set("n", "<leader>bv", vim.cmd.vsplit)
@@ -69,41 +69,41 @@ vim.keymap.set("n", "<Plug>(lsp)rn", "<cmd>Lspsaga rename<cr>")
 -- File tree
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
 vim.keymap.set("n", "<leader>o", function()
-	if vim.bo.filetype == "neo-tree" then
-		vim.cmd.wincmd("p")
-	else
-		vim.cmd.Neotree("focus")
-	end
+    if vim.bo.filetype == "neo-tree" then
+        vim.cmd.wincmd("p")
+    else
+        vim.cmd.Neotree("focus")
+    end
 end)
 
 -- Telescope
 vim.keymap.set("n", ";f", function()
-	require("telescope.builtin").find_files()
+    require("telescope.builtin").find_files()
 end)
 vim.keymap.set("n", ";r", function()
-	require("telescope.builtin").live_grep()
+    require("telescope.builtin").live_grep()
 end)
 vim.keymap.set("n", ";b", function()
-	require("telescope.builtin").buffers()
+    require("telescope.builtin").buffers()
 end)
 vim.keymap.set("n", ";d", function()
-	require("telescope.builtin").diagnostics()
+    require("telescope.builtin").diagnostics()
 end)
 vim.keymap.set("n", "sf", function()
-	local telescope = require("telescope")
-	local function telescope_buffer_dir()
-		return vim.fn.expand("%:p:h")
-	end
-	telescope.extensions.file_browser.file_browser({
-		path = "%:p:h",
-		cwd = telescope_buffer_dir(),
-		respect_gitignore = false,
-		hidden = true,
-		grouped = true,
-		previewer = false,
-		initial_mode = "normal",
-		layout_config = { height = 40 },
-	})
+    local telescope = require("telescope")
+    local function telescope_buffer_dir()
+        return vim.fn.expand("%:p:h")
+    end
+    telescope.extensions.file_browser.file_browser({
+        path = "%:p:h",
+        cwd = telescope_buffer_dir(),
+        respect_gitignore = false,
+        hidden = true,
+        grouped = true,
+        previewer = false,
+        initial_mode = "normal",
+        layout_config = { height = 40 },
+    })
 end)
 
 -- Zen mode

@@ -1,22 +1,21 @@
 {
-  inputs,
   pkgs,
   hostname,
   username,
   ...
-}: {
-  imports =
-    [
-      ./hardware-configuration.nix
+}:
+{
+  imports = [
+    ./hardware-configuration.nix
 
-      ../../modules/fonts.nix
-      # ../../modules/gnome-desktop.nix
-      ../../modules/i18n-en.nix
-      # ../../modules/xremap.nix
-      # ../../modules/tailscale-server.nix
+    ../../modules/fonts.nix
+    # ../../modules/gnome-desktop.nix
+    ../../modules/i18n-en.nix
+    # ../../modules/xremap.nix
+    # ../../modules/tailscale-server.nix
 
-      # ../../users/terminal/wezterm.nix
-    ];
+    # ../../users/terminal/wezterm.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -26,14 +25,17 @@
   # Enable networking
   networking.hostName = "${hostname}";
   networking.networkmanager.enable = true;
-  
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
   # nix
   nix = {
     settings = {
-       experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
@@ -63,7 +65,7 @@
 
   # xserver
   # Enable the X11 windowing system.
-  services = { 
+  services = {
     desktopManager = {
       gnome = {
         enable = true;
@@ -152,6 +154,6 @@
   # Don't touch this
   system.stateVersion = "23.05";
 
-  system.autoUpgrade.enable  = true;
-  system.autoUpgrade.allowReboot  = false;
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
 }

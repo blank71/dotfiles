@@ -1,9 +1,4 @@
 {
-  inputs,
-  config,
-  username,
-  ...
-}: {
   programs = {
     firefox = {
       enable = true;

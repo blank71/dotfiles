@@ -1,10 +1,4 @@
 {
-  inputs,
-  pkgs,
-  username,
-  ...
-}:
-{
   imports = [
     ../../home-manager/dev
     ../../home-manager/gui
@@ -17,8 +11,5 @@
     # ../../home-manager/gnome-desktop
     # ../../home-manager/desktop
     # ../../home-manager/gui
-  ];
-
-  home.packages = with pkgs; [
   ];
 }

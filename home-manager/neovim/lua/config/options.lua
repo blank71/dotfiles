@@ -35,8 +35,8 @@ vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- UI
 vim.opt.cmdheight = 1
-vim.opt.laststatus = 3 -- Always show statusline
-vim.opt.showtabline = 2 -- Always show tabline
+vim.opt.laststatus = 3       -- Always show statusline
+vim.opt.showtabline = 2      -- Always show tabline
 vim.opt.termguicolors = true -- Enable 24-bit RGB colors
 
 -- File
@@ -47,7 +47,7 @@ vim.opt.updatetime = 500
 
 -- Misc
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
-vim.opt.mouse = "" -- Disable mouse
+vim.opt.mouse = ""                -- Disable mouse
 
 -- Disable netrw
 vim.g.loaded_netrw = 1

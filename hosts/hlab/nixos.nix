@@ -1,10 +1,10 @@
 {
-  inputs,
   pkgs,
   hostname,
   username,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
 
@@ -38,7 +38,10 @@
   # nix
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
@@ -64,7 +67,7 @@
 
   # xserver
   # Enable the X11 windowing system.
-  services = { 
+  services = {
     desktopManager = {
       gnome = {
         enable = true;
@@ -89,7 +92,7 @@
   # };
 
   # xrdp
-  services.gnome.gnome-remote-desktop.enable = true; 
+  services.gnome.gnome-remote-desktop.enable = true;
   # services.xrdp = {
   #   enable = true;
   #   defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
@@ -100,8 +103,8 @@
   systemd.services."gnome-remote-desktop".wantedBy = [ "graphical.target" ];
   networking.firewall = {
     enable = true;
-    allowedUDPPorts = [3389];
-    allowedTCPPorts = [3389];
+    allowedUDPPorts = [ 3389 ];
+    allowedTCPPorts = [ 3389 ];
   };
 
   systemd.targets.sleep.enable = false;

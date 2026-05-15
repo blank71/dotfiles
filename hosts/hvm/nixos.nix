@@ -14,7 +14,6 @@
     # ../../modules/xremap.nix
     # ../../modules/tailscale-server.nix
 
-    # ../../users/terminal/wezterm.nix
   ];
 
   # Bootloader.

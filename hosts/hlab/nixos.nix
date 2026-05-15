@@ -19,7 +19,6 @@
     ../../modules/tailscale-server.nix
     ../../modules/vscode.nix
     ../../modules/zsh.nix
-    ../../users/terminal/wezterm.nix
   ];
 
   boot = {

@@ -8,8 +8,9 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/mathematica
+    #../../modules/mathematica
 
+    ../../modules/bluetooth.nix
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix
@@ -44,12 +45,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
   # Power management
   services.upower.enable = true;
+
+  # fwupd
+  services.fwupd.enable = true;
 
   # scaleing
   environment.variables = {
@@ -133,7 +133,13 @@
   };
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      AllowAgentForwarding = true;
+    };
+  };
 
   users.users."${username}" = {
     isNormalUser = true;
@@ -157,6 +163,7 @@
     vscode
     wget
     kdePackages.krdc
+    firmware-updater
   ];
 
   programs = {

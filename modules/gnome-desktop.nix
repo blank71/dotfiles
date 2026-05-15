@@ -12,6 +12,7 @@
     gnomeExtensions.kimpanel
     gnomeExtensions.resource-monitor
     gnomeExtensions.runcat
+    gnomeExtensions.wallpaper-slideshow
     wl-clipboard
   ];
   services.gnome.gnome-keyring.enable = true;

@@ -2,8 +2,9 @@
   inputs,
   username,
   ...
-}: {
-  imports = [inputs.xremap.nixosModules.default];
+}:
+{
+  imports = [ inputs.xremap.nixosModules.default ];
   services.xremap = {
     enable = true;
     userName = username;
@@ -14,9 +15,9 @@
           name = "HENKAN";
           remap = {
             CapsLock = "LEFTCTRL";
-          }; 
+          };
           application = {
-            not = [];
+            not = [ ];
           };
         }
       ];
@@ -25,10 +26,10 @@
           name = "HENKAN";
           remap = {
             M-Grave = "LEFTCTRL";
-          }; 
+          };
           application = {
             not = [
-                "remmina"
+              "remmina"
             ];
           };
         }

@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   home.file = {
     ".wezterm.lua" = {
       source = ./wezterm.lua;
@@ -10,7 +11,7 @@
       source = ./wayland_gnome.lua;
     };
   };
-  home.packages = with pkgs;  [
+  home.packages = with pkgs; [
     wezterm
   ];
 }

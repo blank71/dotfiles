@@ -1,16 +1,16 @@
 {
   pkgs,
-  username,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
-    gcc 
-    go 
+    gcc
+    go
     uv
     nixfmt
     nil
     nixd
-    koodo-reader 
+    koodo-reader
     zed-editor
     # elmPackages.elm
     # elmPackages.elm-test

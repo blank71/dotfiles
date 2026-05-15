@@ -2,7 +2,8 @@
   pkgs,
   username,
   ...
-}: {
+}:
+{
   users.users."${username}".packages = with pkgs; [
     gnome-pomodoro
     gnome-tweaks
@@ -17,4 +18,3 @@
   services.gnome.gnome-keyring.enable = true;
   # programs.ssh.startAgent = true;
 }
-

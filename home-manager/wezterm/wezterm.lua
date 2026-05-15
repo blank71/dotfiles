@@ -4,7 +4,7 @@ local wayland_gnome = require("wayland_gnome")
 local config = {}
 
 if wezterm.config_builder then
-	config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 
 config.front_end = "WebGpu"

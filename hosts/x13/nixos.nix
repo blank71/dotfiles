@@ -19,7 +19,6 @@
     #../../modules/tidal-cycles.nix
     ../../modules/verilog.nix
     #../../modules/vmware.nix
-    ../../modules/virt.nix
     ../../modules/vscode.nix
     ../../modules/xremap.nix
     ../../modules/zsh.nix

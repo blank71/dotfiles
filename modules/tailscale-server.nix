@@ -1,8 +1,9 @@
 {
   config,
-  pkgs, 
+  pkgs,
   ...
-}: {
+}:
+{
   # if Auto Suspend enable, this will down
   # disable Auto Suspend require
   environment.systemPackages = [ pkgs.tailscale ];

@@ -24,7 +24,7 @@
     ../../modules/xremap.nix
     ../../modules/zsh.nix
 
-    ../../users/terminal/wezterm.nix
+    # ../../users/terminal/wezterm.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x13-intel
   ];
 
@@ -179,6 +179,7 @@
     usbutils
     gphoto2
 
+    firmware-updater
   ];
 
   programs = {

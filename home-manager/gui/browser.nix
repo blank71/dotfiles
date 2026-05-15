@@ -1,6 +1,16 @@
 {
+  inputs,
+  config,
+  username,
+  ...
+}: {
   programs = {
-    firefox.enable = true;
-    google-chrome.enable = true;
+    firefox = {
+      enable = true;
+      configPath = "/home/bl/mozilla/firefox";
+    };
+    google-chrome = {
+      enable = true;
+    };
   };
 }

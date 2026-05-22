@@ -77,7 +77,6 @@
     displayManager = {
       defaultSession = "gnome";
       gdm.enable = true;
-      gdm.wayland = true;
     };
   };
   services.xserver = {

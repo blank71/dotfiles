@@ -19,6 +19,13 @@
     zip
     zellij
     basex
+    go
+    uv
+    nixfmt
+    nil
+    nixd
+    zed-editor
+    shfmt
   ];
   home.pointerCursor =
     let

@@ -13,13 +13,5 @@
     ../../home-manager/wezterm
     ../../home-manager/zsh
   ];
-
-  home.packages = with pkgs; [
-  ];
-
-  programs.bash = {
-    enable = true;
-
-    initExtra = "";
-  };
+  nixpkgs.config.allowUnfree = true;
 }

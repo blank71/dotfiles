@@ -10,6 +10,6 @@
     ../../home-manager/zsh
     # ../../home-manager/gnome-desktop
     # ../../home-manager/desktop
-    # ../../home-manager/gui
   ];
+  nixpkgs.config.allowUnfree = true;
 }

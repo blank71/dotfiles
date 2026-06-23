@@ -9,6 +9,7 @@
     fuchsia-cursor
     gnumake
     htop
+    lazygit
     pstree
     remmina
     tmux

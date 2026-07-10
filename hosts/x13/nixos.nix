@@ -175,7 +175,6 @@
     libsecret
     gnome-session
     gnome-remote-desktop
-    input-remapper
     trash-cli
     vscode
     wget

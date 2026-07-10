@@ -159,7 +159,6 @@
     git
     gnome-remote-desktop
     gnome-session
-    input-remapper
     trash-cli
     vscode
     wget

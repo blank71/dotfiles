@@ -15,6 +15,7 @@ in
 {
   home.packages = with pkgs; [
     bitwarden-desktop
+    codex
     devcontainer
     fuchsia-cursor
     gnumake

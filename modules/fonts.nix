@@ -4,21 +4,7 @@
 }:
 {
   fonts = {
-    packages = with pkgs; [
-      fira-code
-      hackgen-font
-      ibm-plex
-      ipafont
-      ipaexfont
-      migu
-      fira-code
-      noto-fonts
-      noto-fonts-cjk-serif
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-      udev-gothic
-      udev-gothic-nf
-    ];
+    packages = import ./font-packages.nix { inherit pkgs; };
     fontDir.enable = true;
     fontconfig = {
       defaultFonts = {

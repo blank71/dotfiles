@@ -2,6 +2,16 @@
   pkgs,
   ...
 }:
+let
+  fontPackages = import ../../modules/font-packages.nix { inherit pkgs; };
+  onlyoffice-desktopeditors-with-fonts = pkgs.onlyoffice-desktopeditors.override {
+    # OnlyOffice discovers fonts inside its FHS environment at /usr/share/fonts.
+    noto-fonts-cjk-sans = pkgs.symlinkJoin {
+      name = "onlyoffice-fonts";
+      paths = fontPackages;
+    };
+  };
+in
 {
   home.packages = with pkgs; [
     bitwarden-desktop
@@ -9,8 +19,11 @@
     fuchsia-cursor
     gnumake
     htop
+    lazygit
     pstree
+    onlyoffice-desktopeditors-with-fonts
     remmina
+    thorium-reader
     tmux
     unzip
     vscode
@@ -18,10 +31,23 @@
     zip
     zellij
     basex
+    go
+    uv
+    nixfmt
+    nil
+    nixd
+    zed-editor
+    shfmt
+
+    # rust
+    cargo
+    rust-analyzer
+    rustc
   ];
   home.pointerCursor =
     let
       getFrom = url: hash: name: {
+        enable = true;
         gtk.enable = true;
         x11.enable = true;
         name = name;

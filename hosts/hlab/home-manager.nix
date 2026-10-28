@@ -4,7 +4,6 @@
 }:
 {
   imports = [
-    ../../home-manager/dev
     ../../home-manager/gui
     # ../../home-manager/neovim
     ../../home-manager/new-nvim
@@ -13,13 +12,5 @@
     ../../home-manager/wezterm
     ../../home-manager/zsh
   ];
-
-  home.packages = with pkgs; [
-  ];
-
-  programs.bash = {
-    enable = true;
-
-    initExtra = "";
-  };
+  nixpkgs.config.allowUnfree = true;
 }

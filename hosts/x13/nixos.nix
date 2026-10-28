@@ -3,11 +3,14 @@
   pkgs,
   hostname,
   username,
+  lib,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
+
+    # ../../modules/mathematica
 
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
@@ -45,7 +48,16 @@
         "nix-command"
         "flakes"
       ];
+      trusted-users = [ "bl" ];
     };
+    buildMachines = [
+      {
+        hostName = "hlab";
+        system = "x86_64-linux";
+        sshUser = "bl";
+      }
+    ];
+    distributedBuilds = lib.mkIf (hostname == "hlab") true;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -146,8 +158,8 @@
   services.openssh.enable = true;
 
   users.users."${username}" = {
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [
+    # ];
     isNormalUser = true;
     extraGroups = [
       "networkmanager"
@@ -165,7 +177,6 @@
     libsecret
     gnome-session
     gnome-remote-desktop
-    input-remapper
     trash-cli
     vscode
     wget

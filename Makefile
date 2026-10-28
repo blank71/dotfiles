@@ -9,7 +9,7 @@ update:
 	--flake "/home/bl/dotfiles/"
 
 build-nixos:
-	sudo nixos-rebuild switch --show-trace --refresh --verbose --upgrade --flake "/home/bl/dotfiles/#$(HOST)"; \
+	sudo nixos-rebuild switch --show-trace --refresh --verbose --upgrade --flake "/home/bl/dotfiles/#$(HOST)"
 
 build-home-manager:
 	nix run home-manager -- switch --flake "/home/bl/dotfiles/#bl@$(HOST)"

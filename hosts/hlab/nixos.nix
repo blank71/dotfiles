@@ -8,7 +8,7 @@
   imports = [
     ./hardware-configuration.nix
 
-    #../../modules/mathematica
+    ../../modules/mathematica
 
     ../../modules/bluetooth.nix
     ../../modules/fonts.nix
@@ -159,7 +159,6 @@
     git
     gnome-remote-desktop
     gnome-session
-    input-remapper
     trash-cli
     vscode
     wget

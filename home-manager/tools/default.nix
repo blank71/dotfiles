@@ -44,6 +44,9 @@ in
     cargo
     rust-analyzer
     rustc
+    jq
+
+    gcc
   ];
   home.pointerCursor =
     let

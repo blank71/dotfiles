@@ -8,7 +8,7 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/mathematica
+    # ../../modules/mathematica
 
     ../../modules/bluetooth.nix
     ../../modules/cockpit/cockpit.nix

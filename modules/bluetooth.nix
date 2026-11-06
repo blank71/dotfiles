@@ -15,21 +15,21 @@
         Discoverable = true;
         DiscoverableTimeout = 0;
         AlwaysPairable = false;
-        
+
         # A2DP/オーディオ設定
         MaxControllers = 4;
         MaxConnectedDevices = 10;
-        
+
         # BTコーデック設定
         BREDR = "true";
         LE = "true";
       };
-      
+
       # LE設定
       LE = {
         EnableAdvMonInterleaveScan = true;
       };
-      
+
       # オーディオプロファイル用の追加設定
       AVDTP = {
         SessionMode = "auto";
@@ -44,7 +44,6 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
-    jack.enable = true;
     extraConfig.pipewire = {
       "10-bluez" = {
         context.modules = [

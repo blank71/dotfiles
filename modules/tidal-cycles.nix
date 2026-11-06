@@ -26,8 +26,6 @@ in
     supercolliderPlugins.sc3-plugins
 
     # Audio tools for JACK and debugging
-    jack2
-    qjackctl
     alsa-utils
     pulseaudio # pactl などのコマンドを含む
     pavucontrol # グラフィカルなオーディオ設定ツール

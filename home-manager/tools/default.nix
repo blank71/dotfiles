@@ -15,6 +15,7 @@ in
 {
   home.packages = with pkgs; [
     bitwarden-desktop
+    codex
     devcontainer
     fuchsia-cursor
     gnumake
@@ -43,6 +44,9 @@ in
     cargo
     rust-analyzer
     rustc
+    jq
+
+    gcc
   ];
   home.pointerCursor =
     let

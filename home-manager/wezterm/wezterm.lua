@@ -7,6 +7,8 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+-- Prefer the native Wayland backend.  WebGpu avoids doing terminal rendering
+-- on the CPU while leaving adapter selection to WezTerm/wgpu.
 config.front_end = "WebGpu"
 config.enable_wayland = true
 
@@ -17,13 +19,14 @@ config.initial_rows = 20
 
 config.font = wezterm.font("UDEV Gothic NFLG")
 
--- config.window_decorations = "TITLE|RESIZE"
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.tab_bar_at_bottom = false
+-- Keep Japanese input available on the native Wayland backend.  This uses
+-- the compositor's text-input protocol rather than the X11 XIM path.
+config.use_ime = true
 
-config.enable_wayland = true
--- wayland_gnome.apply_to_config(config)
+-- These make maximized/tiled windows feel natural in GNOME.
+config.adjust_window_size_when_changing_font_size = false
+config.hide_mouse_cursor_when_typing = true
 
-config.integrated_title_button_style = "Gnome"
+wayland_gnome.apply_to_config(config)
 
 return config

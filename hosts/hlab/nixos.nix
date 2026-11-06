@@ -8,9 +8,10 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/mathematica
+    # ../../modules/mathematica
 
     ../../modules/bluetooth.nix
+    ../../modules/cockpit/cockpit.nix
     ../../modules/fonts.nix
     ../../modules/gnome-desktop.nix
     ../../modules/i18n-en.nix
@@ -52,6 +53,13 @@
 
   # fwupd
   services.fwupd.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
 
   # scaleing
   environment.variables = {
@@ -147,6 +155,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "libvirtd"
       "audio"
       "video"
     ];

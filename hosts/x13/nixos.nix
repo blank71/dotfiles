@@ -97,10 +97,6 @@
     desktopManager = {
       gnome = {
         enable = true;
-        extraGSettingsOverrides = ''
-          [org.gnome.mutter]
-          experimental-features=['scale-monitor-framebuffer']
-        '';
       };
     };
     displayManager = {

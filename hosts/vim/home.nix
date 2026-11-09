@@ -73,6 +73,24 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ../../home-manager/dev
     ../../home-manager/new-nvim
+    ../../home-manager/zsh
   ];
+
+  programs.direnv.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    initContent = ''
+      source /etc/profile.d/history.sh
+      export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+      . "$HOME/.cargo/env"
+      for i in ~/.local/share/profile.d/*.zsh; do;
+        source $i
+      done
+      source ~/.local/share/profile.d/bash-color-prompt.zsh
+      eval "$(direnv hook zsh)"
+    '';
+  };
 }

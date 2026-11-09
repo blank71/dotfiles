@@ -38,12 +38,12 @@
       #stylua
 
       # OCaml
-      ocamlPackages.ocaml-lsp
-      ocamlformat
+      # ocamlPackages.ocaml-lsp
+      # ocamlformat
 
       # Shell
       #shellcheck
-      #shfmt
+      shfmt
 
       # Terraform
       #terraform-ls
